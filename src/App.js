@@ -22,12 +22,12 @@ const App = () => {
     setProductCardType(type);
   };
 
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-    if (currentPath === '/') {
-      window.location.href = '/catalog';
-    }
-  }, []);
+  // useEffect(() => {
+  //   const currentPath = window.location.pathname;
+  //   if (currentPath === '/') {
+  //     window.location.href = '/catalog';
+  //   }
+  // }, []);
 
   return (
     <CartProvider>
@@ -37,8 +37,7 @@ const App = () => {
           <Routes>
             <Route exact path="/catalog" element={<CatalogPage />} />
             <Route exact path="/settings" element={<SettingsPage onNavBarTypeChange={handleNavBarTypeChange} onProductCardTypeChange={handleProductCardTypeChange} />} />
-            {/* Add a catch-all route to redirect to the catalog page if the path is not recognized */}
-            <Route path="*" element={<Navigate to="/catalog" />} />
+            {/* <Route path="*" element={<Navigate to="/catalog" />} /> */}
           </Routes>
         </Container>
       </Router>
